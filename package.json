@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "myshow",
+  "version": "1.0.0",
+  "description": "It is a movie ticket booking website with front-end only. I designed it as a part of my HCI (human-computer interaction) project. It is available in both dark & light mode.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+  "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
