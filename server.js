@@ -1,24 +1,38 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const {MongoClient} = require("mongodb");
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const path = require("path");
 
 const app = express();
 dotenv.config();
-MongoClient.connect(process.env.MONGODB_URI)
-  .then(() =>{
-    console.log("Connected to MongoDB successfully")})
-  .catch((err) =>{console.log("Error connecting to MongoDB", err)
-  })
-const PORT = 3000;
 
-console.log(process.env)
+const uri = process.env.MONGODB_URI;
 
-// Serve static files directly from project root
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+async function connectDB() {
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    console.log("🍃 Connected to MongoDB successfully");
+  } catch (err) {
+    console.error("❌ Error connecting to MongoDB:", err);
+  }
+}
+connectDB();
+
+const PORT = process.env.PORT || 3000;
+
+// Serve static files
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "assets")));
 
-// Route for home page
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
