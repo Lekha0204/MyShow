@@ -6,6 +6,98 @@
     <title>Home</title>
     <link rel="stylesheet" href="assets/css/style-starter.css">
     <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000;  /* black background */
+        margin: 0;
+        padding: 0;
+        color: #fff;             /* default text white */
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .headerhny-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .headerhny-title h3 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .headerhny-title a {
+        text-decoration: none;
+        color: #00bfff;  /* bright blue */
+        font-size: 1rem;
+    }
+
+    .w3l-populohny-grids {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .item.vhny-grid {
+        flex: 0 1 200px;
+        background-color: #111;  /* dark card background */
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .item.vhny-grid:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+    }
+
+    .item.vhny-grid img {
+        width: 100%;
+        display: block;
+        border-bottom: 2px solid #222;
+    }
+
+    .box-content {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .box-content .title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    .box-content .post {
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    .video-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: rgba(255,255,255,0.9);
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .item.vhny-grid:hover .video-icon {
+        opacity: 1;
+    }
+</style>
+
 </head>
 <body>
 <header id="site-header" class="w3l-header fixed-top">
@@ -74,39 +166,127 @@
     </div>
 </section>
 
-<!-- Popular Movies (simplified) -->
 <section class="w3l-grids">
-    <div class="grids-main py-5">
-        <div class="container py-lg-3">
-            <div class="headerhny-title">
-                <div class="w3l-title-grids">
-                    <div class="headerhny-left">
-                        <h3 class="hny-title">Popular Movies</h3>
+    <div class="container">
+        <!-- Section Header -->
+        <div class="headerhny-title">
+            <h3>Popular Movies</h3>
+            <a href="movies.html">Show all</a>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="w3l-populohny-grids">
+            <!-- Movie 1 -->
+            <div class="item vhny-grid">
+                <a href="https://www.youtube.com/watch?v=tas_30CdOss">
+                    <img src="assets/images/Mayabazar.jpeg" alt="Maya Bazar">
+                    <div class="box-content">
+                        <h3 class="title">Maya Bazar</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
                     </div>
-                    <div class="headerhny-right text-lg-right">
-                        <h4><a class="show-title" href="movies.html">Show all</a></h4>
-                    </div>
-                </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
             </div>
-            <div class="w3l-populohny-grids">
-                <div class="item vhny-grid">
-                    <div class="box16 mb-0">
-                        <a href="https://www.youtube.com/watch?v=tas_30CdOss">
-                            <figure>
-                                <img class="img-fluid" src="assets/images/Mayabazar.jpeg" alt="">
-                            </figure>
-                            <div class="box-content">
-                                <h3 class="title">Maya Bazar</h3>
-                                <h4><span class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</span></h4>
-                            </div>
-                            <span class="fa fa-play video-icon" aria-hidden="true"></span>
-                        </a>
+
+            <!-- Movie 2 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/7996TZ9lCeI?si=oarKvxaDw5KI3aJg">
+                    <img src="assets/images/gundammaKatha.jpeg" alt="Gundamma Katha">
+                    <div class="box-content">
+                        <h3 class="title">Gundamma Katha</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
                     </div>
-                </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 3 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/bE--kxiHkaQ?si=LAgkdiQq0CCklmoU">
+                    <img src="assets/images/narasimha.jpg" alt="Narasimha">
+                    <div class="box-content">
+                        <h3 class="title">Narasimha</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 4 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/5hjw9C2Ja-w?si=k_C7DmuQWn3fEmAU">
+                    <img src="assets/images/shankar.jpeg" alt="Shankar Dada MBBS">
+                    <div class="box-content">
+                        <h3 class="title">Shankar Dada MBBS</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 5 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/PvxIObToTlM?si=53hh2-ylrur0kiSQ">
+                    <img src="assets/images/aparichithudu.jpeg" alt="Aparichithudu">
+                    <div class="box-content">
+                        <h3 class="title">Aparichithudu</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 6 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/NOFpbJkrFX4?si=vnmxdAczznIHjOH_">
+                    <img src="assets/images/annamayya.jpg" alt="Annamayya">
+                    <div class="box-content">
+                        <h3 class="title">Annamayya</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 7 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/GXao7KtgGqw?si=ajq_H0mbjTZ607_g">
+                    <img src="assets/images/jeans.jpg" alt="Jeans">
+                    <div class="box-content">
+                        <h3 class="title">Jeans</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 8 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/LorbrQ-8RUg?si=9FlIgoikz9nFhHmi">
+                    <img src="assets/images/indra.jpg" alt="Indra">
+                    <div class="box-content">
+                        <h3 class="title">Indra</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
+            </div>
+
+            <!-- Movie 9 -->
+            <div class="item vhny-grid">
+                <a href="https://youtu.be/k_-PvLgr1c0?si=5Wtz1zo07ZZsBkYq">
+                    <img src="assets/images/godavari.jpg" alt="Godavari">
+                    <div class="box-content">
+                        <h3 class="title">Godavari</h3>
+                        <h4 class="post"><span class="fa fa-clock-o"></span> 2 Hr 4min</h4>
+                    </div>
+                    <span class="fa fa-play video-icon"></span>
+                </a>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- New Releases (simplified, only one item) -->
 <section class="w3l-grids">
